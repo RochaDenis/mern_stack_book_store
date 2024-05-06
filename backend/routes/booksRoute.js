@@ -45,7 +45,7 @@ router.get('/', async (request, response) => {
   }
 }),
   // Definindo uma rota GET para "/books" para pegar por ID
-router.get('/:d', async (request, response) => {
+router.get('/:id', async (request, response) => {
     try {
       const { id } = request.params; // Obtendo o ID do livro da requisição
 

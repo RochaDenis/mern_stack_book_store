@@ -2,7 +2,6 @@ import Express from "express"; // Importando o módulo Express
 import { PORT, mongoDBURL } from "./config.js"; // Importando as constantes PORT e mongoDBURL do arquivo config.js
 import mongoose from "mongoose"; // Importando o módulo mongoose
 import booksRoute from "./routes/booksRoute.js"; // Importando o bookRouter
-import { Book } from "./models/bookModel.js";
 import cors from "cors"; // Importando o módulo cors
 
 const app = Express(); // Criando uma instância do Express
@@ -11,12 +10,12 @@ app.use(Express.json()); // Habilitando o uso de JSON no Express
 
 //middleware for handling CORS Policy
 app.use(
-  cors({
-    origin: "http://localhost:3000", // Allow access from all domains
-    method: ["GET", "POST", "PUT", "DELETE"], // Allow methods
-    allowedHeaders: ["Content-Type"], // Allow headers
-  })
-);
+   cors({
+     origin: "http://localhost:5173", // Allow access from all domains
+     method: ["GET", "POST", "PUT", "DELETE"], // Allow methods
+     allowedHeaders: ["Content-Type"], // Allow headers
+   })
+ );
 
 
 app.get("/", (request, response) => {
