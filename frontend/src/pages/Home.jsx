@@ -5,6 +5,9 @@ import { MdOutlineAddBox } from "react-icons/md";
 import Spinner from "../components/Spinner";
 import BooksCard from "../components/home/BooksCard";
 import BooksTable from "../components/home/BooksTable";
+import Chat from "../components/home/chatbot/Chat";
+import ActionProvider from "../components/home/chatbot/ActionProvider";
+
 /**
  * Componente de página inicial.
  *
@@ -59,6 +62,9 @@ const Home = () => {
       ) : (
         <BooksCard books={books} /> // Exibe os cards de livros
       )}
+      <div className='fixed bottom-0 right-0'>
+        <Chat  />
+      </div>
     </div>
   );
 };
